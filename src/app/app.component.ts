@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { MovieService } from './src/app/state/movie/movie.service';
-import { MoviesRepository } from './src/app/state/movie/movies.repository';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MovieService } from './state/movie/movie.service';
+import { MoviesRepository } from './state/movie/movies.repository';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
 
