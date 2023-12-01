@@ -3,6 +3,7 @@ import { select, withProps, createStore } from '@ngneat/elf';
 import { selectAllEntities, setEntities, withEntities } from '@ngneat/elf-entities';
 
 export interface Movie {
+  assetFile: string;
   description: string;
   duration: string;
   genre: string[];

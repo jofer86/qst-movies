@@ -1,0 +1,20 @@
+app-movies {
+  .thumbnail {
+    width: 4rem;
+    height: 8rem;
+  }
+
+  .mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
+    width: 100%;
+    border-radius: 25%;
+    padding: .25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    opacity: .75;
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    background-color: adjust-hue($color: #cc0d0d, $degrees: 15);
+  }
+}

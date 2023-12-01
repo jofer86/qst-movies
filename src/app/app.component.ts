@@ -1,6 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MovieService } from './state/movie/movie.service';
-import { MoviesRepository } from './state/movie/movies.repository';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,17 +6,6 @@ import { MoviesRepository } from './state/movie/movies.repository';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  constructor(private moviesService: MovieService, private moviesRepository: MoviesRepository){}
-  movies$ = this.moviesRepository.movies$;
-  watchList$ = this.moviesRepository.onWatchList$;
-
-  ngOnInit(): void {
-    this.movies$.subscribe(console.log);
-    this.watchList$.subscribe(console.log);
-    this.moviesService.getAndStoreMovies();
-    let mov = this.moviesService.movies;
-    this.moviesService.addToWatchList(mov[0]);
-  }
 }

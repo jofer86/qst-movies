@@ -10,6 +10,7 @@ export class MovieService {
   onWatchList = this.moviesRepository.onWatchList;
   movies: Movie[] = [
     {
+      assetFile: "assets/tenet.png",
       description: "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
       duration: "2h 30min",
       genre: ["Action", "Sci-Fi"],
@@ -21,6 +22,7 @@ export class MovieService {
       trailerLink: "https://www.youtube.com/watch?v=LdOM0x0XDMo"
     },
     {
+      assetFile: "assets/spider-man.png",
       description: "Teen Miles Morales becomes the Spider-Man of his universe, and must join with five spider-powered individuals from other dimensions to stop a threat for all realities.",
       duration: "1h 57min",
       genre: ["Action", "Animation", "Adventure"],
@@ -32,6 +34,7 @@ export class MovieService {
       trailerLink: "https://www.youtube.com/watch?v=tg52up16eq0"
     },
     {
+      assetFile: "assets/knives-out.png",
       description: "A detective investigates the death of a patriarch of an eccentric, combative family.",
       duration: "2h 10min",
       genre: ["Comedy", "Crime", "Drama"],
@@ -43,6 +46,7 @@ export class MovieService {
       trailerLink: "https://www.youtube.com/watch?v=qGqiHJTsRkQ"
     },
     {
+      assetFile: "assets/guardians-of-the-galaxy.png",
       description: "A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe.",
       duration: "2h 1min",
       genre: ["Action", "Adventure", "Comedy"],
@@ -54,6 +58,7 @@ export class MovieService {
       trailerLink: "https://www.youtube.com/watch?v=d96cjJhvlMA"
     },
     {
+      assetFile: "assets/avengers.png",
       description: "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's mightiest heroes to stop the villainous Ultron from enacting his terrible plan.",
       duration: "2h 21min",
       genre: ["Action", "Adventure", "Sci-Fi"],

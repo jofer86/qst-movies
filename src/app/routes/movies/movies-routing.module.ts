@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MoviesComponent } from './movies.component';
 import { WatchListComponent } from './watch-list/watch-list.component';
 import { RouterModule, Routes } from '@angular/router';
+import { movieResolver } from 'src/app/state/movie/movie.resolver';
 
 const routes: Routes = [
   {
@@ -11,6 +12,9 @@ const routes: Routes = [
       {
         path: '',
         component: MoviesComponent,
+        resolve: {
+          movies: movieResolver
+        }
       },
       {
         path: 'watch-list',
