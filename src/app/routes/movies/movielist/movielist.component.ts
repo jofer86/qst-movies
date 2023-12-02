@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Movie, MoviesRepository } from 'src/app/state/movie/movies.repository';
 import { DisplayedColumns } from '../movies.component';
 
@@ -6,6 +6,7 @@ import { DisplayedColumns } from '../movies.component';
   selector: 'app-movielist',
   templateUrl: './movielist.component.html',
   styleUrls: ['./movielist.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class MovielistComponent {
   @Input() movies!: Movie[];
@@ -13,7 +14,6 @@ export class MovielistComponent {
 
   toggleSortByDate = false;
   toggleSortByTitle = false;
-
   DisplayedColumns = DisplayedColumns;
 
   constructor(private movieRepository: MoviesRepository) {}
@@ -32,6 +32,5 @@ export class MovielistComponent {
       this.toggleSortByTitle = !this.toggleSortByTitle;
       this.movieRepository.sortMoviesBy(sortBy, false, this.toggleSortByTitle);
     }
-    // this.movieRepository.sortMoviesBy(sortBy);
   }
 }

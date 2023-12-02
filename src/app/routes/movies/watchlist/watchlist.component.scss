@@ -4,6 +4,20 @@ app-watchlist {
     color: rgba(100, 148, 237, 0.75);
   }
 
+  .watchlist {
+    width: 20rem;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(100, 148, 237, 0.15);
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: rgba(100, 148, 237, 0.1);
+    box-shadow: 6px 5px 14px -5px rgba(100, 148, 237, 0.5);
+  }
+
   mat-card.movie-card {
     width: 20rem;
     margin-bottom: 1rem;

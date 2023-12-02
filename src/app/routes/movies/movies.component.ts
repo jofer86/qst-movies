@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { Movie, MoviesRepository } from 'src/app/state/movie/movies.repository';
+import { MoviesRepository } from 'src/app/state/movie/movies.repository';
 
 export enum DisplayedColumns {
   Thumbnail = 'thumbnail',
@@ -31,9 +31,4 @@ export class MoviesComponent {
   ];
 
   constructor(private movieRepository: MoviesRepository) {}
-
-  addToWatchList(movie: Movie): void {
-    movie.onWatchList = true;
-    this.movieRepository.addToWatchList(movie);
-  }
 }

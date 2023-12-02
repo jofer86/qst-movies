@@ -6,7 +6,7 @@
     ></app-movielist>
   </div>
 
-  <div class="watchlist" *ngIf="watchList$ | async as movies">
+  <ng-container *ngIf="watchList$ | async as movies">
     <app-watchlist [watchList]="movies"></app-watchlist>
-  </div>
+  </ng-container>
 </section>

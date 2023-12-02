@@ -1,13 +1,16 @@
-<h1 class="title">Watchlist</h1>
-<mat-card *ngFor="let movie of watchList" class="movie-card">
-  <mat-card-header>
-    <div
-      mat-card-avatar
-      class="card-avatar"
-      style="background-image: url({{ movie.assetFile }});"
-    ></div>
-    <mat-card-title>{{ movie.title | slice : 0 : 20 }}...</mat-card-title>
-    <mat-card-subtitle>{{ movie.genre.join(", ") }}</mat-card-subtitle>
-    <mat-icon (click)="removeFromWatchList(movie)">close</mat-icon>
-  </mat-card-header>
-</mat-card>
+<div class="watchlist">
+  <h1 class="title">Watchlist</h1>
+
+  <mat-card *ngFor="let movie of watchList" class="movie-card">
+    <mat-card-header>
+      <div
+        mat-card-avatar
+        class="card-avatar"
+        style="background-image: url({{ movie.assetFile }});"
+      ></div>
+      <mat-card-title>{{ movie.title | slice : 0 : 20 }}...</mat-card-title>
+      <mat-card-subtitle>{{ movie.genre.join(", ") }}</mat-card-subtitle>
+      <mat-icon (click)="removeFromWatchList(movie)">close</mat-icon>
+    </mat-card-header>
+  </mat-card>
+</div>
