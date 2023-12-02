@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MoviesComponent } from './movies.component';
-import { WatchListComponent } from './watch-list/watch-list.component';
+import { WatchlistComponent } from './watchlist/watchlist.component';
 import { RouterModule, Routes } from '@angular/router';
 import { movieResolver } from 'src/app/state/movie/movie.resolver';
 
@@ -13,12 +12,8 @@ const routes: Routes = [
         path: '',
         component: MoviesComponent,
         resolve: {
-          movies: movieResolver
-        }
-      },
-      {
-        path: 'watch-list',
-        component: WatchListComponent,
+          movies: movieResolver,
+        },
       },
     ],
   },
@@ -27,6 +22,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class MoviesRoutingModule { }
+export class MoviesRoutingModule {}

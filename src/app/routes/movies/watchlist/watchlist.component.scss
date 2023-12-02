@@ -1,0 +1,48 @@
+app-watchlist {
+  h1.title {
+    font-weight: 500;
+    color: rgba(100, 148, 237, 0.75);
+  }
+
+  mat-card.movie-card {
+    width: 20rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: rgba(100, 148, 237, 0.25);
+    box-shadow: 6px 5px 14px -5px rgba(100, 148, 237, 0.75);
+    position: relative;
+
+    mat-card-header {
+      display: flex;
+      padding: 1rem 1rem;
+    }
+
+    mat-icon {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      cursor: pointer;
+    }
+
+    .mat-mdc-card-header-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .card-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    margin-bottom: 0;
+    height: 4rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(100, 148, 237, 0.3);
+  }
+}

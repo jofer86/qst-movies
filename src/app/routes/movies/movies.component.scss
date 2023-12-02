@@ -1,20 +1,44 @@
 app-movies {
+  td {
+    position: relative;
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+  }
+
+  .watchlist {
+    width: 20rem;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(100, 148, 237, 0.15);
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: rgba(100, 148, 237, 0.1);
+    box-shadow: 6px 5px 14px -5px rgba(100, 148, 237, 0.5);
+  }
+
   .thumbnail {
     width: 4rem;
     height: 8rem;
   }
 
   .mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
-    width: 100%;
-    border-radius: 25%;
-    padding: .25rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    width: 5rem;
+    border-radius: 10%;
+    padding: 0.15rem;
+    font-size: 0.75rem;
     font-weight: 400;
-    opacity: .75;
     position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     bottom: 0;
     top: auto;
-    background-color: adjust-hue($color: #cc0d0d, $degrees: 15);
+    background-color: #6495ed;
   }
 }
