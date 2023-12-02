@@ -1,41 +1,49 @@
 <ng-container *ngIf="movie$ | async as movie">
-  <h1>{{ movie.trailerLink }}</h1>
-  <button (click)="goBack()" mat-button color="primary">Go Back</button>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>{{ movie.title }}</mat-card-title>
-      <mat-card-subtitle>{{ movie.genre.join(", ") }}</mat-card-subtitle>
-    </mat-card-header>
-    <img
-      class="card-image"
-      mat-card-image
-      [src]="movie.assetFile"
-      alt="Photo of a Shiba Inu"
-    />
-    <mat-card-content>
-      <p>{{ movie.description }}}</p>
-    </mat-card-content>
+  <div class="main-container">
+    <mat-card class="poster-image">
+      <img
+        class="card-image"
+        mat-card-image
+        [src]="movie.assetFile"
+        alt="asset image"
+      />
 
-    <mat-slide-toggle
-      class="example-margin"
-      color="primary"
-      (toggleChange)="handleToggle(movie)"
-      [checked]="movie.onWatchList"
-    >
-      {{ movie.onWatchList ? "On Watch List" : "Add to Watch List" }}
-    </mat-slide-toggle>
-  </mat-card>
+      <mat-slide-toggle
+        class="example-margin"
+        color="primary"
+        (toggleChange)="handleToggle(movie)"
+        [checked]="movie.onWatchList"
+      >
+        {{ movie.onWatchList ? "On Watch List" : "Add to Watch List" }}
+      </mat-slide-toggle>
+    </mat-card>
 
-  <iframe
-    width="560"
-    height="315"
-    [src]="
-      'https://www.youtube.com/embed/' + movie.trailerLink.split('=')[1]
-        | safeUrl : 'resourceUrl'
-    "
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
+    <mat-card class="video-card">
+      <mat-card-header>
+        <mat-card-title>{{ movie.title }}</mat-card-title>
+        <mat-card-subtitle>{{ movie.genre.join(", ") }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <iframe
+        width="600"
+        height="315"
+        [src]="
+          'https://www.youtube.com/embed/' + movie.trailerLink.split('=')[1]
+            | safeUrl : 'resourceUrl'
+        "
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+
+      <mat-card-content>
+        <p>{{ movie.description }}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <button class="back-button" (click)="goBack()" mat-button color="primary">
+    Go Back
+  </button>
 </ng-container>
