@@ -10,6 +10,7 @@
       <img class="thumbnail" src="{{ movie.assetFile }}" alt="" />
     </td>
   </ng-container>
+
   <ng-container *ngFor="let header of displayedColumns">
     <ng-container
       *ngIf="header !== 'thumbnail'"
@@ -36,3 +37,7 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+<button (click)="sortMoviesBy(DisplayedColumns.ReleasedDate)">
+  sort release
+</button>
+<button (click)="sortMoviesBy(DisplayedColumns.Title)">sort by title</button>

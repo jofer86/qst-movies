@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { select, withProps, createStore } from '@ngneat/elf';
-import { selectAllEntities, setEntities, withEntities } from '@ngneat/elf-entities';
+import {
+  selectAllEntities,
+  setEntities,
+  withEntities,
+} from '@ngneat/elf-entities';
+import { take, tap } from 'rxjs';
 
 export interface Movie {
   assetFile: string;
@@ -31,6 +36,40 @@ export class MoviesRepository {
   onWatchList$ = movieStore.pipe(select((state) => state.onWatchList));
   onWatchList = movieStore.getValue().onWatchList;
 
+  sortMoviesBy(
+    sortBy: string,
+    toggleSortByDate = false,
+    toggleSortByTitle = false
+  ) {
+    this.movies$
+      .pipe(
+        take(1),
+        tap({
+          next: (movies) => {
+            movies.sort((a: any, b: any) => {
+              if (sortBy === 'releasedDate') {
+                if (toggleSortByDate) {
+                  return (
+                    new Date(b[sortBy]).getTime() -
+                    new Date(a[sortBy]).getTime()
+                  );
+                }
+                return (
+                  new Date(a[sortBy]).getTime() - new Date(b[sortBy]).getTime()
+                );
+              }
+              if (toggleSortByTitle) {
+                return b[sortBy].localeCompare(a[sortBy]);
+              } else {
+                return a[sortBy].localeCompare(b[sortBy]);
+              }
+            });
+            movieStore.update(setEntities(movies));
+          },
+        })
+      )
+      .subscribe();
+  }
 
   addMovies(movies: Movie[]) {
     movieStore.update(setEntities(movies));

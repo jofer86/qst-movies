@@ -1,7 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
 import { MovieService } from './movie.service';
-import { Movie, MoviesRepository } from './movies.repository';
+import { Movie } from './movies.repository';
+import { MoviesRepository } from './MoviesRepository';
 
 describe('MovieService', () => {
   let service: MovieService;
@@ -9,15 +10,16 @@ describe('MovieService', () => {
   let addToWatchListSpy: jasmine.Spy;
   let removeFromWatchListSpy: jasmine.Spy;
   const movie: Movie = {
-    description: "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
-    duration: "2h 30min",
-    genre: ["Action", "Sci-Fi"],
+    description:
+      'Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.',
+    duration: '2h 30min',
+    genre: ['Action', 'Sci-Fi'],
     id: '53f9122c-ede6-4849-b847-7edf62c2463d',
     onWatchList: false,
     rating: 7.8,
-    releasedDate: "3 September 2020",
-    title: "Tenet",
-    trailerLink: "https://www.youtube.com/watch?v=LdOM0x0XDMo"
+    releasedDate: '3 September 2020',
+    title: 'Tenet',
+    trailerLink: 'https://www.youtube.com/watch?v=LdOM0x0XDMo',
   };
 
   beforeEach(() => {
