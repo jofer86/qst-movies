@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+
 import { MoviesRepository } from 'src/app/state/movie/movies.repository';
 
 export enum DisplayedColumns {

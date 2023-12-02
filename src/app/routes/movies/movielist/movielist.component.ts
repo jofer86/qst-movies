@@ -1,6 +1,7 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { Movie, MoviesRepository } from 'src/app/state/movie/movies.repository';
+
 import { DisplayedColumns } from '../movies.component';
+import { Movie, MoviesRepository } from 'src/app/state/movie/movies.repository';
 
 @Component({
   selector: 'app-movielist',

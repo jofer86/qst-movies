@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MovieService } from 'src/app/state/movie/movie.service';
-import { Movie, MoviesRepository } from 'src/app/state/movie/movies.repository';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Location } from '@angular/common';
+
+import { Movie, MoviesRepository } from 'src/app/state/movie/movies.repository';
+import { MovieService } from 'src/app/state/movie/movie.service';
 
 @Component({
   selector: 'app-movie',

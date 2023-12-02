@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { select, withProps, createStore } from '@ngneat/elf';
 import {
-  selectAllEntities,
-  setEntities,
-  setActiveId,
-  withEntities,
-  withActiveId,
   selectActiveEntity,
+  selectAllEntities,
+  setActiveId,
+  setEntities,
+  withActiveId,
+  withEntities,
 } from '@ngneat/elf-entities';
 import { take, tap } from 'rxjs';
 
