@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { MoviesComponent } from './movies.component';
-import { WatchlistComponent } from './watchlist/watchlist.component';
 import { RouterModule, Routes } from '@angular/router';
-import { movieResolver } from 'src/app/state/movie/movie.resolver';
+import {
+  movieResolver,
+  moviesResolver,
+} from 'src/app/state/movie/movie.resolver';
 import { MovieComponent } from './movie/movie.component';
 
 const routes: Routes = [
@@ -13,12 +15,16 @@ const routes: Routes = [
         path: '',
         component: MoviesComponent,
         resolve: {
-          movies: movieResolver,
+          movies: moviesResolver,
         },
       },
       {
         path: 'movies/:id',
         component: MovieComponent,
+        resolve: {
+          movie: movieResolver,
+          movies: moviesResolver,
+        },
       },
     ],
   },

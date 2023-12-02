@@ -79,7 +79,21 @@ export class MovieService {
     this.moviesRepository.addMovies(this.movies);
   }
 
+  setActiveMovie(id: string | null): void {
+    this.moviesRepository.setActiveMovie(id);
+  }
+
   addToWatchList(movie: Movie): void {
+    console.log(movie);
+    let newMovies = this.movies.map((mov) => {
+      if (mov.id === movie.id) {
+        mov.onWatchList = true;
+        console.log(mov);
+      }
+      return mov;
+    });
+
+    this.movies = newMovies;
     this.moviesRepository.addToWatchList(movie);
     localStorage.setItem(
       'watchList',
@@ -88,6 +102,15 @@ export class MovieService {
   }
 
   removeFromWatchList(movie: Movie): void {
+    let newMovies = this.movies.map((mov) => {
+      if (mov.id === movie.id) {
+        mov.onWatchList = false;
+        console.log(mov);
+      }
+      return mov;
+    });
+
+    this.movies = newMovies;
     this.moviesRepository.removeFromWatchList(movie);
     localStorage.setItem(
       'watchList',

@@ -1,0 +1,17 @@
+app-movie {
+  button {
+    margin-bottom: 0.5rem;
+  }
+  mat-card {
+    max-width: 25rem;
+
+    mat-slide-toggle {
+      margin: 1rem 0 1rem 0.75rem;
+    }
+  }
+
+  .card-image {
+    max-width: 20rem;
+    margin: 1rem auto;
+  }
+}

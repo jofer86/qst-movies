@@ -11,9 +11,17 @@ import { WatchlistComponent } from './watchlist/watchlist.component';
 import { MovielistComponent } from './movielist/movielist.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MovieComponent } from './movie/movie.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { SafeUrlPipe } from 'src/app/pipes/safe-url.pipe';
 
 @NgModule({
-  declarations: [MoviesComponent, WatchlistComponent, MovielistComponent, MovieComponent],
+  declarations: [
+    MoviesComponent,
+    WatchlistComponent,
+    MovielistComponent,
+    MovieComponent,
+    SafeUrlPipe,
+  ],
   imports: [
     CommonModule,
     MoviesRoutingModule,
@@ -23,6 +31,7 @@ import { MovieComponent } from './movie/movie.component';
     MatBadgeModule,
     MatCardModule,
     MatButtonModule,
+    MatSlideToggleModule,
   ],
 })
 export class MoviesModule {}

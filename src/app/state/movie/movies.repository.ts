@@ -3,7 +3,10 @@ import { select, withProps, createStore } from '@ngneat/elf';
 import {
   selectAllEntities,
   setEntities,
+  setActiveId,
   withEntities,
+  withActiveId,
+  selectActiveEntity,
 } from '@ngneat/elf-entities';
 import { take, tap } from 'rxjs';
 
@@ -27,14 +30,21 @@ export interface MoviesProps {
 const movieStore = createStore(
   { name: 'movies' },
   withProps<MoviesProps>({ onWatchList: [] }),
-  withEntities<Movie>()
+  withEntities<Movie>(),
+  withActiveId()
 );
 
 @Injectable({ providedIn: 'root' })
 export class MoviesRepository {
   movies$ = movieStore.pipe(selectAllEntities());
   onWatchList$ = movieStore.pipe(select((state) => state.onWatchList));
+  movie$ = movieStore.pipe(selectActiveEntity());
   onWatchList = movieStore.getValue().onWatchList;
+  movie = movieStore.getValue().activeId;
+
+  setActiveMovie(movieId: string | null) {
+    movieStore.update(setActiveId(movieId));
+  }
 
   sortMoviesBy(
     sortBy: string,
