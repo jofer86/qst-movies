@@ -1,9 +1,9 @@
 app-movielist {
   .thumbnail {
-    width: 4rem;
-    height: 5rem;
     border-radius: 50%;
+    height: 5rem;
     object-fit: cover;
+    width: 4rem;
 
     &:hover {
       cursor: pointer;
@@ -12,6 +12,7 @@ app-movielist {
 
   table {
     border-radius: 50px;
+
     td,
     th {
       color: #5287eb;
@@ -28,38 +29,37 @@ app-movielist {
   }
 
   .mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
-    width: 5rem;
+    background-color: #6495ed;
     border-radius: 10%;
-    padding: 0.15rem;
+    bottom: 0;
     font-size: 0.75rem;
     font-weight: 400;
-    position: absolute;
-    margin: 0 auto;
     left: 0;
+    margin: 0 auto;
+    padding: 0.15rem;
+    position: absolute;
     right: 0;
-    bottom: 0;
     top: auto;
-    background-color: #6495ed;
+    width: 5rem;
   }
 
   .add-button {
-    width: 3rem;
-    height: 3rem;
+    align-items: center;
+    animation: fadeEntrance 0.5s ease-in forwards;
+    background-color: rgba(100, 148, 237, 0.1);
+    border-radius: 5px;
+    border: 2px solid rgba(100, 148, 237, 0.15);
     display: flex;
     flex-direction: column;
+    height: 3rem;
     justify-content: center;
-    align-items: center;
-    border: 2px solid rgba(100, 148, 237, 0.15);
-    border-radius: 5px;
-    background-color: rgba(100, 148, 237, 0.1);
-    animation: fadeEntrance 0.5s ease-in forwards;
+    width: 3rem;
 
     mat-icon {
       color: #6495ed;
     }
 
     &:hover {
-      /* Start with an opacity of 0 */
       cursor: pointer;
       animation: fadeIn 0.5s ease-in forwards;
     }
@@ -84,16 +84,16 @@ app-movielist {
   }
 
   .add-button-disabled {
-    width: 3rem;
-    height: 3rem;
+    align-items: center;
+    animation: fadeEntrance 0.5s ease-in forwards;
+    background-color: rgba(100, 148, 237, 0.3);
+    border-radius: 5px;
+    border: 2px solid rgba(100, 148, 237, 0.15);
     display: flex;
     flex-direction: column;
+    height: 3rem;
     justify-content: center;
-    align-items: center;
-    border: 2px solid rgba(100, 148, 237, 0.15);
-    border-radius: 5px;
-    background-color: rgba(100, 148, 237, 0.3);
-    animation: fadeEntrance 0.5s ease-in forwards;
+    width: 3rem;
 
     mat-icon {
       color: #6495ed;

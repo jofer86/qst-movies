@@ -36,11 +36,11 @@ const movieStore = createStore(
 
 @Injectable({ providedIn: 'root' })
 export class MoviesRepository {
-  movies$ = movieStore.pipe(selectAllEntities());
-  onWatchList$ = movieStore.pipe(select((state) => state.onWatchList));
-  movie$ = movieStore.pipe(selectActiveEntity());
-  onWatchList = movieStore.getValue().onWatchList;
   movie = movieStore.getValue().activeId;
+  movie$ = movieStore.pipe(selectActiveEntity());
+  movies$ = movieStore.pipe(selectAllEntities());
+  onWatchList = movieStore.getValue().onWatchList;
+  onWatchList$ = movieStore.pipe(select((state) => state.onWatchList));
 
   setActiveMovie(movieId: string | null) {
     movieStore.update(setActiveId(movieId));

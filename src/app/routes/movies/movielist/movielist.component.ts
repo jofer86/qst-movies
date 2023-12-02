@@ -4,18 +4,17 @@ import { DisplayedColumns } from '../movies.component';
 import { Movie, MoviesRepository } from 'src/app/state/movie/movies.repository';
 
 @Component({
-  selector: 'app-movielist',
-  templateUrl: './movielist.component.html',
-  styleUrls: ['./movielist.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  selector: 'app-movielist',
+  styleUrls: ['./movielist.component.scss'],
+  templateUrl: './movielist.component.html',
 })
 export class MovielistComponent {
-  @Input() movies!: Movie[];
   @Input() displayedColumns!: string[];
-
+  @Input() movies!: Movie[];
+  DisplayedColumns = DisplayedColumns;
   toggleSortByDate = false;
   toggleSortByTitle = false;
-  DisplayedColumns = DisplayedColumns;
 
   constructor(private movieRepository: MoviesRepository) {}
 

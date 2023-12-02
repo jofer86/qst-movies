@@ -26,23 +26,20 @@ app-movie {
     color: #84a8ec;
   }
 
-  mat-slide-toggle {
-    label {
-      font-weight: bolder;
-      color: #6495ed;
-    }
-  }
-
   mat-card.poster-image {
-    max-width: 25rem;
     background-color: rgba(100, 148, 237, 0.1);
-    box-shadow: 6px 5px 14px -5px rgba(100, 148, 237, 0.5);
-
-    border: 2px solid rgba(100, 148, 237, 0.15);
     border-radius: 5px;
+    border: 2px solid rgba(100, 148, 237, 0.15);
+    box-shadow: 6px 5px 14px -5px rgba(100, 148, 237, 0.5);
+    max-width: 25rem;
 
     mat-slide-toggle {
       margin: 1rem 0 1rem 0.75rem;
+
+      label {
+        color: #6495ed;
+        font-weight: bolder;
+      }
     }
   }
 
@@ -52,14 +49,13 @@ app-movie {
 
     mat-card.video-card {
       background-color: rgba(100, 148, 237, 0.1);
+      background-color: rgba(100, 148, 237, 0.1);
+      border-radius: 5px;
+      border: 2px solid rgba(100, 148, 237, 0.15);
+      box-shadow: 6px 5px 14px -5px rgba(100, 148, 237, 0.5);
       max-width: 40rem;
       padding: 0.5rem;
-
-      border: 2px solid rgba(100, 148, 237, 0.15);
-      border-radius: 5px;
       padding: 1rem;
-      background-color: rgba(100, 148, 237, 0.1);
-      box-shadow: 6px 5px 14px -5px rgba(100, 148, 237, 0.5);
 
       iframe {
         margin: 1rem auto;
@@ -68,7 +64,7 @@ app-movie {
   }
 
   .card-image {
-    max-width: 20rem;
     margin: 0 auto;
+    max-width: 20rem;
   }
 }

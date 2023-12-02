@@ -19,6 +19,7 @@ describe('MovieService', () => {
     releasedDate: '3 September 2020',
     title: 'Tenet',
     trailerLink: 'https://www.youtube.com/watch?v=LdOM0x0XDMo',
+    assetFile: 'assets/tenet.png',
   };
 
   beforeEach(() => {

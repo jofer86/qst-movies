@@ -5,10 +5,10 @@ import { Movie, MoviesRepository } from 'src/app/state/movie/movies.repository';
 import { MovieService } from 'src/app/state/movie/movie.service';
 
 @Component({
-  selector: 'app-movie',
-  templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  selector: 'app-movie',
+  styleUrls: ['./movie.component.scss'],
+  templateUrl: './movie.component.html',
 })
 export class MovieComponent {
   movie$ = this.moviesRepository.movie$;
