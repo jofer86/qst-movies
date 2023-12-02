@@ -9,9 +9,11 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { MovielistComponent } from './movielist/movielist.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
-  declarations: [MoviesComponent, WatchlistComponent, MovielistComponent],
+  declarations: [MoviesComponent, WatchlistComponent, MovielistComponent, MovieComponent],
   imports: [
     CommonModule,
     MoviesRoutingModule,
@@ -20,6 +22,7 @@ import { MovielistComponent } from './movielist/movielist.component';
     MatListModule,
     MatBadgeModule,
     MatCardModule,
+    MatButtonModule,
   ],
 })
 export class MoviesModule {}

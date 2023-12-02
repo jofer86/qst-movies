@@ -1,0 +1,114 @@
+app-movielist {
+  .thumbnail {
+    width: 4rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  table {
+    border-radius: 50px;
+    td,
+    th {
+      color: #5287eb;
+    }
+
+    .cdk-row {
+      background-color: rgba(100, 148, 237, 0.1);
+      height: 7rem;
+    }
+
+    .cdk-header-row {
+      background-color: rgba(100, 148, 237, 0.15);
+    }
+  }
+
+  .mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
+    width: 5rem;
+    border-radius: 10%;
+    padding: 0.15rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    background-color: #6495ed;
+  }
+
+  .add-button {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(100, 148, 237, 0.15);
+    border-radius: 5px;
+    background-color: rgba(100, 148, 237, 0.1);
+    animation: fadeEntrance 0.5s ease-in forwards;
+
+    mat-icon {
+      color: #6495ed;
+    }
+
+    &:hover {
+      /* Start with an opacity of 0 */
+      cursor: pointer;
+      animation: fadeIn 0.5s ease-in forwards;
+    }
+
+    @keyframes fadeEntrance {
+      from {
+        box-shadow: -6px -6px 10px 1px rgba(100, 148, 237, 0.2);
+      }
+      to {
+        box-shadow: 6px 5px 10px -5px rgba(100, 148, 237, 0.5);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        box-shadow: 6px 5px 10px -5px rgba(100, 148, 237, 0.5);
+      }
+      to {
+        box-shadow: -6px -6px 10px 1px rgba(100, 148, 237, 0.2);
+      }
+    }
+  }
+
+  .add-button-disabled {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(100, 148, 237, 0.15);
+    border-radius: 5px;
+    background-color: rgba(100, 148, 237, 0.3);
+    animation: fadeEntrance 0.5s ease-in forwards;
+
+    mat-icon {
+      color: #6495ed;
+    }
+  }
+
+  button.sort-button {
+    background-color: rgba(100, 148, 237, 0.7);
+    margin-top: 1rem;
+    span.mdc-button__label {
+      color: #ffffff;
+    }
+
+    &:last-of-type {
+      margin-left: 1rem;
+    }
+  }
+}

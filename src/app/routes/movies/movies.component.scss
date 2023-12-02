@@ -7,24 +7,4 @@ app-movies {
     display: flex;
     align-items: center;
   }
-
-  .thumbnail {
-    width: 4rem;
-    height: 8rem;
-  }
-
-  .mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
-    width: 5rem;
-    border-radius: 10%;
-    padding: 0.15rem;
-    font-size: 0.75rem;
-    font-weight: 400;
-    position: absolute;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: auto;
-    background-color: #6495ed;
-  }
 }

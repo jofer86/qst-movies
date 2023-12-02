@@ -3,6 +3,7 @@ import { MoviesComponent } from './movies.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { RouterModule, Routes } from '@angular/router';
 import { movieResolver } from 'src/app/state/movie/movie.resolver';
+import { MovieComponent } from './movie/movie.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
         resolve: {
           movies: movieResolver,
         },
+      },
+      {
+        path: 'movies/:id',
+        component: MovieComponent,
       },
     ],
   },

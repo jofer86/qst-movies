@@ -1,43 +1,66 @@
-<table mat-table [dataSource]="movies" class="table">
-  <ng-container matColumnDef="thumbnail">
-    <th mat-header-cell *matHeaderCellDef>Thumb</th>
-    <td
-      matBadge="{{ movie.onWatchList ? 'On Watchlist' : '' }}"
-      matBadgeSize="medium"
-      mat-cell
-      *matCellDef="let movie"
-    >
-      <img class="thumbnail" src="{{ movie.assetFile }}" alt="" />
-    </td>
-  </ng-container>
-
-  <ng-container *ngFor="let header of displayedColumns">
-    <ng-container
-      *ngIf="header !== 'thumbnail'"
-      matColumnDef="{{ header === 'action' ? '' : header }}"
-    >
-      <th mat-header-cell *matHeaderCellDef>
-        {{ header[0].toUpperCase() }}{{ header.substring(1) }}
-      </th>
-      <td mat-cell *matCellDef="let movie">{{ movie[header] }}</td>
-    </ng-container>
-
-    <ng-container *ngIf="header === 'action'" matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef>
-        {{ header[0].toUpperCase() }}{{ header.substring(1) }}
-      </th>
-      <td mat-cell *matCellDef="let movie">
-        <button [disabled]="movie.onWatchList" (click)="addToWatchList(movie)">
-          <mat-icon>add</mat-icon>
-        </button>
+<div class="movie-list">
+  <table mat-table [dataSource]="movies" class="table">
+    <ng-container matColumnDef="thumbnail">
+      <th mat-header-cell *matHeaderCellDef>Thumb</th>
+      <td
+        matBadge="{{ movie.onWatchList ? 'On Watchlist' : '' }}"
+        matBadgeSize="medium"
+        mat-cell
+        *matCellDef="let movie"
+      >
+        <img
+          [routerLink]="['movies', movie.id]"
+          class="thumbnail"
+          src="{{ movie.assetFile }}"
+          alt=""
+        />
       </td>
     </ng-container>
-  </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
-<button (click)="sortMoviesBy(DisplayedColumns.ReleasedDate)">
-  sort release
-</button>
-<button (click)="sortMoviesBy(DisplayedColumns.Title)">sort by title</button>
+    <ng-container *ngFor="let header of displayedColumns">
+      <ng-container
+        *ngIf="header !== 'thumbnail'"
+        matColumnDef="{{ header === 'action' ? '' : header }}"
+      >
+        <th mat-header-cell *matHeaderCellDef>
+          {{ header[0].toUpperCase() }}{{ header.substring(1) }}
+        </th>
+        <td mat-cell *matCellDef="let movie">{{ movie[header] }}</td>
+      </ng-container>
+
+      <ng-container *ngIf="header === 'action'" matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ header[0].toUpperCase() }}{{ header.substring(1) }}
+        </th>
+        <td mat-cell *matCellDef="let movie">
+          <button
+            [class.add-button]="!movie.onWatchList"
+            [class.add-button-disabled]="movie.onWatchList"
+            [disabled]="movie.onWatchList"
+            (click)="addToWatchList(movie)"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <button
+    class="sort-button"
+    mat-button
+    (click)="sortMoviesBy(DisplayedColumns.ReleasedDate)"
+  >
+    sort by release
+  </button>
+  <button
+    class="sort-button"
+    mat-button
+    (click)="sortMoviesBy(DisplayedColumns.Title)"
+  >
+    sort by title
+  </button>
+</div>
