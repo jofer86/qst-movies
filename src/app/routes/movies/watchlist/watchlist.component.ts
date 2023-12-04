@@ -8,8 +8,7 @@ import { Movie, MoviesRepository } from 'src/app/state/movie/movies.repository';
   encapsulation: ViewEncapsulation.None,
 })
 export class WatchlistComponent {
-  @Input()
-  watchList!: Movie[];
+  @Input() watchList!: Movie[];
   constructor(private movieRepository: MoviesRepository) {}
 
   removeFromWatchList(movie: Movie): void {

@@ -3,10 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MovieComponent } from './movie/movie.component';
 import { MoviesComponent } from './movies.component';
-import {
-  movieResolver,
-  moviesResolver,
-} from 'src/app/state/movie/movie.resolver';
+import { movieResolver, moviesResolver } from 'src/app/state/movie/movie.resolver';
 
 const routes: Routes = [
   {

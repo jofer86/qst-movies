@@ -11,7 +11,7 @@ app-movielist {
   }
 
   table {
-    border-radius: 50px;
+    border-radius: 3.125rem;
 
     td,
     th {
@@ -47,8 +47,8 @@ app-movielist {
     align-items: center;
     animation: fadeEntrance 0.5s ease-in forwards;
     background-color: rgba(100, 148, 237, 0.1);
-    border-radius: 5px;
-    border: 2px solid rgba(100, 148, 237, 0.15);
+    border-radius: 0.3125rem;
+    border: 0.125rem solid rgba(100, 148, 237, 0.15);
     display: flex;
     flex-direction: column;
     height: 3rem;
@@ -66,19 +66,19 @@ app-movielist {
 
     @keyframes fadeEntrance {
       from {
-        box-shadow: -6px -6px 10px 1px rgba(100, 148, 237, 0.2);
+        box-shadow: -0.375rem -0.375rem 0.625rem 0.0625rem rgba(100, 148, 237, 0.2);
       }
       to {
-        box-shadow: 6px 5px 10px -5px rgba(100, 148, 237, 0.5);
+        box-shadow: 0.375rem 0.3125rem 0.625rem -0.3125rem rgba(100, 148, 237, 0.5);
       }
     }
 
     @keyframes fadeIn {
       from {
-        box-shadow: 6px 5px 10px -5px rgba(100, 148, 237, 0.5);
+        box-shadow: 0.375rem 0.3125rem 0.625rem -0.3125rem rgba(100, 148, 237, 0.5);
       }
       to {
-        box-shadow: -6px -6px 10px 1px rgba(100, 148, 237, 0.2);
+        box-shadow: -0.375rem -0.375rem 0.625rem 0.0625rem rgba(100, 148, 237, 0.2);
       }
     }
   }
@@ -87,8 +87,8 @@ app-movielist {
     align-items: center;
     animation: fadeEntrance 0.5s ease-in forwards;
     background-color: rgba(100, 148, 237, 0.3);
-    border-radius: 5px;
-    border: 2px solid rgba(100, 148, 237, 0.15);
+    border-radius: 0.3125rem;
+    border: 0.125rem solid rgba(100, 148, 237, 0.15);
     display: flex;
     flex-direction: column;
     height: 3rem;
